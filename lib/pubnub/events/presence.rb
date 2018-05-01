@@ -3,7 +3,6 @@ module Pubnub
   # Holds presence functionality, beware, most of presence functionality is
   # held by SubscribeEvent
   class Presence < SubscribeEvent
-    include Celluloid
     include Pubnub::Validator::Presence
 
     def initialize(options, app)

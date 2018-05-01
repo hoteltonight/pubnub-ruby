@@ -2,7 +2,6 @@
 module Pubnub
   # Holds heartbeat functionality
   class Heartbeat < SingleEvent
-    include Celluloid
     include Pubnub::Validator::Heartbeat
     include Pubnub::Formatter
 

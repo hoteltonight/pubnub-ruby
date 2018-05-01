@@ -2,7 +2,6 @@
 module Pubnub
   # Holds delete functionality
   class DeleteMessages < SingleEvent
-    include Celluloid
     include Pubnub::Validator::Delete
 
     def initialize(options, app)

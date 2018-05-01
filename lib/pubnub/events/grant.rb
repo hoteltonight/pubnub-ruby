@@ -2,7 +2,6 @@
 module Pubnub
   # Holds grant functionality
   class Grant < PAM
-    include Celluloid
     include Pubnub::Validator::Grant
 
     def initialize(options, app)

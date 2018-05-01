@@ -1,7 +1,5 @@
 module Pubnub
   class Telemetry
-    include Celluloid
-
     def initialize
       @timers, @good_to_go, @recorded_history = {}, {}, {}
       Pubnub.logger.debug('Pubnub::Telementry') { 'Initialized Telemetry'}

@@ -166,9 +166,6 @@ module Pubnub
       Pubnub.logger.debug('Pubnub::Client') do
         "Created new Pubnub::Client instance. Version: #{Pubnub::VERSION}"
       end
-
-      Celluloid.boot if @env[:boot_celluloid] && celluloid_not_running?
-      @telemetry = Telemetry.new unless celluloid_not_running?
     end
 
     def add_listener(options)
@@ -360,7 +357,6 @@ module Pubnub
 
     def setup_app(options)
       Pubnub.logger = options[:logger] || Logger.new('pubnub.log')
-      Celluloid.logger = Pubnub.logger
       @subscriber = Subscriber.new(self)
       @env = options
     end
@@ -390,12 +386,6 @@ module Pubnub
         symbolized_options.merge!(k.to_sym => options[k])
       end
       symbolized_options
-    end
-
-    def celluloid_not_running?
-      !Celluloid.running?
-    rescue Celluloid::Error
-      true
     end
   end
 end

@@ -2,8 +2,6 @@
 module Pubnub
   # Heart takes responsibility of heartbeat event
   class Heart
-    include Celluloid
-
     def initialize(options)
       @heartbeat = options[:heartbeat]
       @channel   = options[:channel]

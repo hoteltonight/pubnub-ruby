@@ -2,7 +2,6 @@
 module Pubnub
   # Holds history functionality
   class History < SingleEvent
-    include Celluloid
     include Pubnub::Validator::History
 
     def initialize(options, app)

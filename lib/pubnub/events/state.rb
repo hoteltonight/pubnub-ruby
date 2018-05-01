@@ -2,7 +2,6 @@
 module Pubnub
   # Holds state functionality
   class State < SingleEvent
-    include Celluloid
     include Pubnub::Validator::State
 
     def initialize(options, app)

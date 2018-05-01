@@ -40,8 +40,6 @@ module Pubnub
       async.fire unless @http_sync
 
       envelopes
-    ensure
-      terminate if !@stay_alive && @http_sync
     end
 
     def leave_all

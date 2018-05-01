@@ -35,8 +35,6 @@ module Pubnub
       envelopes = fire_callbacks(handle(response, uri))
       finalize_event(envelopes)
       envelopes
-    ensure
-      terminate unless @stay_alive
     end
 
     private

@@ -5,7 +5,7 @@ require 'open-uri'
 require 'openssl'
 require 'celluloid/current'
 
-Celluloid.boot
+# Celluloid.boot
 
 require 'timers'
 require 'httpclient'
